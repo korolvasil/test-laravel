@@ -1,0 +1,219 @@
+
+/************* Variables *********************/
+/*********************************************/
+
+/* color variables */
+$primaryLC: white;
+$niceBlueColor: #004a7c;
+
+$bodyC: #E8E8E8;
+// $topNavbarC: #bfbfbf;
+$topNavbarC: $niceBlueColor;
+// $sideNavbarC: #505050;
+$sideNavbarC: $niceBlueColor;
+// $footerC: #808080;
+$footerC: $niceBlueColor;
+$fontC: #636b6f;
+
+
+/* layout variables */
+$topNavbarH: 50px;
+$footerH: 50px;
+$sideNavbarW: 250px;
+
+/*************** Main CSS ********************/
+/*********************************************/
+.main-wrapper{
+    padding: 35px 20px 0 20px;
+}
+article{
+    margin-bottom: 20px;
+}
+.top-navbar{
+    box-sizing: border-box;
+    padding-left: $topNavbarH;
+    padding-top: 0.5rem;
+}
+.side-navbar{
+    box-sizing: border-box;
+    padding: 2em;
+}
+.main-footer{
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+/*************** Theme CSS *******************/
+/*********************************************/
+body{
+    background: $bodyC;
+    color: $fontC;
+}
+.top-navbar{
+    background: $topNavbarC;
+    color: $primaryLC;
+    height: $topNavbarH;
+}
+.main-content{
+    background: $primaryLC;
+    max-width: 1200px;
+}
+.side-navbar{
+    background: $sideNavbarC;
+    color: $primaryLC;
+}
+.main-footer{
+    background: $footerC;
+    color: $primaryLC;
+    height: $footerH;
+}
+
+/************* LayOut CSS ********************/
+/*********************************************/
+
+
+.body-wrapper{
+    @extend %flex-CC;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header, .main-footer{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.main-header{
+    position:fixed;
+    z-index: 1;
+}
+
+.main-content{
+    flex: 1 0 auto;
+    margin-top: $topNavbarH;
+    width: 100%;
+}
+
+.header-wrapper{
+    @extend %flex-CC;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-navbar{
+    width: 100%;
+}
+
+.side-navbar{
+    width: $sideNavbarW;
+    position: fixed;
+    top: 0;
+    left: -$sideNavbarW;
+    overflow: auto;
+    
+    height: 120vh;
+    &:after {
+        content: "";
+        display: block;
+        height: 20vh;
+        width: 100%;
+    }
+}
+
+.top-navbar, .side-navbar{
+    z-index: 1;
+}
+
+.icon-bars{
+    z-index: 2;
+}
+/************* Action Bars CSS ***************/
+/*********************************************/
+#active-header{
+    top: 0;
+    &.--hide-head{
+        top: -$topNavbarH;
+        #aside-toggler{
+            top: -$topNavbarH;
+        }
+    }
+    & .overlay-shadow{
+        content: "";
+        display:block;
+        top:-10%;
+        bottom: 0;
+        position:fixed;
+        width: 0;
+        min-height: 120%;
+        background: black;
+        opacity: 0.3;
+        z-index: 0;
+        transition: width 0.2s linear;
+    }
+}
+
+#active-aside{
+    // left: -$sideNavbarW;
+    &.--show-bar{
+        left: 0;
+        #aside-toggler{
+            left: 200px;
+            top: 0;
+        }
+    }
+}
+
+#active-header{
+    transition: top 0.2s ease-in-out;
+}
+#active-aside{
+    transition: left 0.2s ease-in-out;
+}
+#aside-toggler{
+    transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+/************* Utility CSS *******************/
+/*********************************************/
+
+%flex-CC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.--noscroll{
+    overflow-y: hidden;
+}
+
+
+
+/************* Icons CSS *********************/
+/*********************************************/
+span.icon-bars{
+    position: fixed;
+    left: 0;
+    top:0;
+    background: $sideNavbarC;
+    @extend %flex-CC;
+    justify-content: space-around;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 14px;
+    height:50px;
+    width:50px;
+    box-sizing: border-box;
+    span{
+        display:block;
+        width: 100%;
+        height: 2px;
+        background: $bodyC;
+    }
+}
+
+
+
+
+
+
