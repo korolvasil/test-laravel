@@ -1,0 +1,71 @@
+/*************** Theme CSS *******************/
+/*********************************************/
+
+/* Accordions */
+/*
+
+ul.accordion{
+  padding: 0; margin: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  li{
+    //width: 50%;
+  }
+
+  .accordion-header{
+    display: block;
+    padding: 15px 20px;
+    background: #bbb;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .accordion-content{
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    &:target{
+      height: auto;
+      padding: 20px;
+    }
+
+    form{
+      margin: 0 0 20px 0;
+      width: 100%;
+    }
+  }
+}
+*/
+.res-form{
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: white;
+  border: 1px solid $niceBlueColor;
+  box-shadow: 2px 2px 5px rgba(0,0,0, .5);
+
+  .res-form-groups{
+
+
+    &.form-error *{
+      color: red;
+    }
+  }
+}
+
+
+
+/* Helper classes */
+.hidden{display: none;}

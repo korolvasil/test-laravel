@@ -11,6 +11,21 @@
 |
 */
 
+/**
+ *  Authenticates routes
+ */
+Auth::routes();
+
+Route::get('/auth', function (){
+    if(Auth::check()){ return redirect('/home'); }
+    return view('auth.auth');
+})->name('auth');
+
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+Route::get('/home', 'HomeController@index')->name('home');
