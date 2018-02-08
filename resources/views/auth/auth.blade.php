@@ -22,21 +22,19 @@
         <label for="register">Join us <i data-feather="user-plus"></i></label>
     </div>
 
-    <div class="log-reg-wrapper">
+    <div class="slider-wrapper">
 
 
         {{-- Login Form --}}
         <input type="radio" name="auth-form" id="login" class="hidden">
-        <form action="{{ route('login') }}" method="POST" class="res-form" >
+        <form id="log-form" action="{{ route('login') }}" method="POST" class="res-form" >
 
             <div class="res-form-groups form-error">
                 <label for="log-email" class="">E-Mail Address </label>
-                <i data-feather="mail"></i>
                 <input id="log-email" type="email" name="email" value="{{ old('email') }}" required autofocus>
             </div>
             <div class="res-form-groups">
                 <label for="log-password" class="">Password</label>
-                <i data-feather="corner-down-right"></i>
                 <input id="log-password" type="password" class="" name="password" required>
             </div>
 
@@ -44,33 +42,30 @@
                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
             </label>
 
-            <button type="submit" class="">Log in</button>
+            <button form="log-form" type="submit" class="">Log in</button>
             {{ csrf_field() }}
         </form>
 
         {{-- Register Form --}}
         <input type="radio" name="auth-form" id="register" class="hidden">
-        <form action="{{ route('register') }}" method="POST" class="res-form" >
+        <form id="reg-form" action="{{ route('register') }}" method="POST" class="res-form" >
 
             <div class="res-form-groups">
                 <label for="reg-login" class="">Login</label>
-                <i data-feather="user"></i>
                 <input id="reg-login" type="text" class="" name="login" value="{{ old('login') }}" required autofocus>
             </div>
 
             <div class="res-form-groups">
                 <label for="reg-email" class="">E-Mail Address</label>
-                <i data-feather="mail"></i>
                 <input id="reg-email" type="email" name="email" value="{{ old('email') }}" required autofocus>
             </div>
 
             <div class="res-form-groups">
                 <label for="reg-password" class="">Password</label>
-                <i data-feather="corner-down-right"></i>
                 <input id="reg-password" type="password" class="" name="password" required>
             </div>
 
-            <button type="submit" class="">Register</button>
+            <button form="reg-form" type="submit" class="">Register</button>
             {{ csrf_field() }}
         </form>
 
