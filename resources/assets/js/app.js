@@ -67,3 +67,27 @@
         logLabel.classList.toggle(togglerFocusClass);
     };
 })();
+
+
+/*
+* Forms labels interaction with inputs
+* Animate labels for inputs when it focused and value is set
+*/
+(function(){
+    var formGroups = document.querySelectorAll('.slider-wrapper form.res-form .res-form-group');
+    formGroups.forEach(function(group){
+        var input = group.getElementsByTagName('input')[0];
+        var label = group.querySelector('label[for='+ input.id +']');
+        if(input.value){
+            label.classList.add('focus');
+        }
+        input.onfocus= function(){
+            label.classList.add('focus');
+        };
+        input.onblur = function(){
+            if(this.value === undefined || this.value === ''){
+                label.classList.remove('focus');
+            }
+        };
+    });
+})();

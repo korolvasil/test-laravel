@@ -27,7 +27,7 @@
         </div>
     </main>
     <footer class="main-footer">
-        <i data-feather="log-in"></i>
+
     </footer>
 </div>
 <script type="text/javascript" src="public/fonts/feather/feather.min.js"></script>
