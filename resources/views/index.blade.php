@@ -1,17 +1,24 @@
 @extends('layouts.default')
 @section('content')
 
-    <h1>Index Page</h1>
+    <div class="flex-center full-screen">
+        <a href="{{ route('meeting') }}" class="card" style="max-width: 300px; width: 100%">
 
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register') }}">Register</a>
-            @endif
-        </div>
-    @endif
+                <header>
+                    <i data-feather="calendar"></i>
+                    <h3>Upcoming event</h3>
+                </header>
+                <div>
+                    <p>
+                        Meeting in 10 years.
+                    </p>
+                    <h3 class="">Date: April, 21</h3>
+                    {{--<div class="btn-gr -right">--}}
+                    {{--<a href="" class="btn">Info</a>--}}
+                    {{--</div>--}}
+                </div>
+        </a>
+
+    </div>
 
 @endsection

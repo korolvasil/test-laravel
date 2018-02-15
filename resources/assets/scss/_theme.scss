@@ -70,7 +70,7 @@ ul.accordion{
 
 .auth-toggler{
   font-size: 0.8rem;
-  display: flex;
+
   height: 100%;
   justify-content: space-around;
 
@@ -85,12 +85,25 @@ ul.accordion{
     &.focus{
       background: #2475a5;
     }
-
-    svg{
-      margin: 0 0.5rem;
-      width: 1rem;
-      height: 1rem;
+  }
+  a{
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    float: right;
+    &:hover{
+      background: #2475a5;
     }
+  }
+
+  svg{
+    margin: 0 0.5rem;
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -104,6 +117,8 @@ input[type=radio].slider-radio{
     display: block;
   }
 }
+
+
 
 .slider-wrapper{
   position: relative;
@@ -194,23 +209,192 @@ input[type=radio].slider-radio{
   }
 }
 
-/*.res-form{
-  padding: 1.5rem;
-  margin: 1rem 0;
-  background: white;
-  border: 1px solid $niceBlueColor;
-  box-shadow: 2px 2px 5px rgba(0,0,0, .5);
+.forgot-link{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  padding: 1rem;
+  margin-top: 1rem;
 
-  .res-form-group{
+  &:hover{
+    text-decoration: underline;
+  }
+}
 
+/**/
 
-    &.form-error *{
-      color: red;
+.wellcome{
+  text-align: center;
+  font-weight: 100;
+
+  font-size: 2.8rem;
+  line-height: 2.8rem;
+}
+
+.wellcome-events{
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-weight: 100;
+
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+  .vote-btn{
+    background: $niceBlueColor;
+    border-radius: 20px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+    a{
+      display: block;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      text-align:center;
+      text-decoration: none;
+      color: white;
+      font-weight: 300;
+
+      padding: 0.5rem;
+      font-size: 1.5rem;
     }
   }
-}*/
+}
+@media (min-width: 576px) {
+  .wellcome{
 
+    font-size: 5rem;
+    line-height: 5rem;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .wellcome-events{
+
+    font-size: 3rem;
+    line-height: 3rem;
+
+    .vote-btn{
+      margin-top: 3rem;
+      a{
+        padding: 0.5rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}
 
 
 /* Helper classes */
+
+/* Buttons */
+.btn{
+  border: none;
+  border-radius: 3px;
+  background: $niceBlueColor;
+  font-size: 0.9rem;
+  svg{
+    margin: 0 0.5rem;
+    height: 1rem;
+    width: 1rem;
+  }
+  &:hover{
+    background: #2475a5;
+  }
+}
+a.btn, div.btn a, button.btn{
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-gr{
+  display: flex;
+  justify-content: center;
+  .btn{
+    border-radius: 0;
+  }
+  &.-full{
+    .btn{
+      flex: 1 1 auto;
+    }
+  }
+  &.-right{
+    justify-content: flex-end;
+  }
+  &.-left{
+    justify-content: flex-start;
+  }
+}
+
+/* Cards */
+a.card{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.card{
+  position: relative;
+  padding-bottom: 0.5rem;
+  //min-height: 140px;
+
+  & >*{
+    padding: 0.5rem 1rem;
+  }
+  box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.2);
+  background: white;
+
+  header{
+    background: $niceBlueColor;
+    color: white;
+    display: flex;
+    align-items: center;
+
+    & >*{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  svg{
+    display: block;
+    position: relative;
+    color: white;
+    float: left;
+    margin-right: 1rem;
+  }
+  .btn{
+    float: right;
+  }
+}
+
+
 .hidden{display: none;}
+.link{
+  text-decoration: none;
+}
+.flex{
+  display: flex;
+}
+
+.flex-center{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-vh{
+  width: 100%;
+  height: 100%;
+}
+
+.full-screen{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}

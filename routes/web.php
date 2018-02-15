@@ -25,7 +25,14 @@ Route::get('/auth', function (){
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route:: get('/meeting', [
+    'as'=> 'meeting',
+
+    'middleware'=> 'auth'
+]);
